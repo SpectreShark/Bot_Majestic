@@ -1,2 +1,11 @@
 venv/
 config.json
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+.idea/
+.vscode/

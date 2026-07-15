@@ -20,6 +20,10 @@ else:
     with open("config.json") as file:
         config = json.load(file)
 
+bot_token = os.getenv("DISCORD_BOT_TOKEN")
+if not bot_token:
+    sys.exit("'DISCORD_BOT_TOKEN' is not set. Copy .env.example and configure the environment.")
+
 
 intents = discord.Intents.all()
 
@@ -97,4 +101,4 @@ async def on_command_error(context: Context, error) -> None:
 
 
 asyncio.run(load_commands())
-bot.run(config["token"])
+bot.run(bot_token)
